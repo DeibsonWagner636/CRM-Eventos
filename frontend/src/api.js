@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// Troque a URL abaixo pelo endereço da sua API FastAPI quando for publicar
-const API_URL = "http://localhost:8000";
+// A URL da API vem do .env
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
 
 export const getContatos = () =>
   axios.get(`${API_URL}/contatos`).then(res => res.data);
